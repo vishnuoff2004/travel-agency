@@ -1,69 +1,167 @@
-# Phase 1 – Core Booking Platform (MVP)
+File: /project-prompts/PHASES/PHASE_1_MVP.md
 
-## Goal
-Build the minimum viable platform: authentication, search, booking, driver management, and admin oversight.
-
-## Duration
-Estimated: 4–6 Weeks
+# Phase 1 — Core Booking Platform (MVP)
 
 ---
 
-## Scope — REQ‑ID Mapping
+## Goal
 
-| REQ‑ID | Feature |
-|--------|---------|
-| REQ‑001 | User Registration & Authentication (JWT + bcrypt) |
-| REQ‑002 | Role‑Based Access Control (traveler, driver, agency, admin) |
-| REQ‑003 | Destination Search (search by source, destination, date) |
-| REQ‑004 | Booking Creation (select driver/agency, confirm booking) |
-| REQ‑005 | Booking Lifecycle Management (Pending → Confirmed → OnTrip → Completed → Cancelled) |
-| REQ‑006 | Driver Availability Management (publish slots, accept/reject bookings) |
-| REQ‑007 | Agency Dashboard (manage drivers, monitor bookings) |
-| REQ‑008 | Administrator Dashboard (manage users, agencies, drivers) |
-| REQ‑011 | Form Validation & Error Handling |
-| REQ‑012 | Responsive UI (desktop, tablet, mobile) |
-| REQ‑017 | Security (password hashing, JWT, HTTPS, RBAC) |
-| REQ‑018 | Data Integrity (ACID transactions for bookings) |
-| REQ‑023 | Technology Stack constraint (React, Node, MySQL, Sequelize) |
-| REQ‑028 | Concurrent Booking Conflict resolution |
-| REQ‑031 | UTC timestamps, client‑side timezone display |
-| REQ‑032 | User Input Size limits |
-| REQ‑033 | Password Policy enforcement |
+Deliver a fully functional booking platform where travelers can search destinations, create and manage bookings, drivers can manage routes and trips, agencies can manage drivers and monitor bookings, and admins can oversee the entire platform.
+
+## Duration
+
+4–6 Weeks
+
+## Delivered Value
+
+End-to-end travel booking workflows for all four roles. Platform is production-ready for initial launch.
+
+## Included Requirements
+
+### Authentication & User Management
+
+| REQ-ID | Description |
+|--------|-------------|
+| REQ-001 | User Registration |
+| REQ-002 | User Login |
+| REQ-003 | JWT Authentication |
+| REQ-004 | Role-Based Access Control |
+| REQ-005 | Profile Management |
+| REQ-028 | Session Protection |
+| REQ-032 | Password Security |
+
+### Destination Search
+
+| REQ-ID | Description |
+|--------|-------------|
+| REQ-006 | Destination Search |
+| REQ-007 | View Agencies and Drivers from Search |
+| REQ-038 | Empty Search Results |
+
+### Booking Management
+
+| REQ-ID | Description |
+|--------|-------------|
+| REQ-008 | Create Booking |
+| REQ-009 | Booking History |
+| REQ-010 | Booking Tracking |
+| REQ-011 | Booking Cancellation |
+| REQ-039 | Maximum Booking Capacity |
+| REQ-040 | Simultaneous Booking Conflicts |
+| REQ-041 | Past Date Booking |
+| REQ-033 | Data Consistency |
+
+### Driver Management
+
+| REQ-ID | Description |
+|--------|-------------|
+| REQ-012 | Driver Profile Management |
+| REQ-013 | Route Creation by Driver |
+| REQ-014 | Availability Management |
+| REQ-015 | Accept or Reject Bookings |
+| REQ-016 | Trip Status Update |
+| REQ-042 | Driver Auto-Unavailability |
+
+### Agency Management
+
+| REQ-ID | Description |
+|--------|-------------|
+| REQ-017 | Agency Driver Management |
+| REQ-018 | Agency Booking Monitoring |
+| REQ-043 | Orphaned Bookings |
+
+### Admin Management
+
+| REQ-ID | Description |
+|--------|-------------|
+| REQ-019 | Admin User Management |
+| REQ-020 | Admin Agency Management |
+| REQ-021 | Admin Booking Oversight |
+| REQ-044 | Account Deactivation Impact |
+
+### Dashboards
+
+| REQ-ID | Description |
+|--------|-------------|
+| REQ-022 | User Dashboard |
+| REQ-023 | Driver Dashboard |
+| REQ-024 | Admin Dashboard |
+
+### UX & Validation
+
+| REQ-ID | Description |
+|--------|-------------|
+| REQ-025 | Form Validation |
+| REQ-026 | Loading States |
+| REQ-027 | Success and Error Notifications |
+
+### Architecture & Constraints
+
+| REQ-ID | Description |
+|--------|-------------|
+| REQ-034 | Modular Architecture |
+| REQ-035 | Technology Stack |
+| REQ-036 | Browser Support |
+| REQ-037 | API Format |
 
 ## Deliverables
 
 ### Backend
-- Authentication APIs (`/api/auth/register`, `/api/auth/login`)
-- Booking APIs (`/api/bookings`, `/api/bookings/:id/status`)
-- Driver APIs (`/api/driver/availability`, `/api/driver/routes`)
-- Agency APIs (`/api/agency/:id/dashboard`)
-- Admin APIs (`/api/admin/overview`)
-- Middleware: auth, RBAC, validation, error handling
+
+- Express.js server with route structure
+- All database models and migrations
+- Auth middleware (JWT verification)
+- RBAC middleware (role permission checks)
+- Error handler middleware
+- Validator middleware
+- Auth API (register, login)
+- User API (profile CRUD)
+- Search API (route search with partial matching)
+- Booking API (create, list, track, cancel)
+- Driver API (profile, routes, availability, accept, reject, status)
+- Agency API (driver management, booking monitoring)
+- Admin API (user, agency, booking management)
+- Dashboard API (user, driver, admin)
 
 ### Frontend
-- Registration & Login pages
-- User Dashboard (search, book, history)
-- Driver Dashboard (routes, availability, booking requests)
-- Agency Dashboard (driver management, booking monitoring)
-- Admin Dashboard (user/agency/driver management)
+
+- Login and registration pages
+- Search page with results display
+- Booking creation page
+- Booking history page with pagination
+- Booking detail and tracking page
+- Driver dashboard page
+- Route management page
+- Booking requests page
+- Agency dashboard page
+- Driver management page
+- Booking monitor page
+- Admin dashboard page
+- User management page
+- Agency management page
+- Booking oversight page
+- Common components (LoadingSpinner, SkeletonLoader, Notification, Pagination, Modal, Button)
+- Form components (InputField, SelectField, DatePicker, FormError)
+- Auth context
+- API service layer
 
 ### Database
-- Tables: `users`, `agencies`, `drivers`, `routes`, `bookings`, `availabilities`
-- Sequelize models with validations and associations
 
-### Infrastructure
-- Docker Compose (frontend, backend, MySQL containers)
-- Environment config (`.env` files)
+- MySQL schema with all 6 tables
+- Indexes on search columns, foreign keys, status columns
+- Seed data for initial routes and agencies
 
-## Value Delivered
-A fully functional booking platform where travelers can search, book, and track trips; drivers can manage availability; agencies can oversee operations; admins can manage the platform.
+### Deployment
 
----
+- Docker Compose with backend, frontend, and MySQL services
+- Dockerfile for backend and frontend
+- Environment variable configuration
 
-## CHECK
-- MVP defined ✅
-- Each feature delivers usable value ✅
-- No overlap with Phase 2/3/4 ✅
-- All REQ‑IDs listed are specific to this phase ✅
+## Excluded from Phase 1
 
-File: /project-prompts/PHASES/PHASE_1_MVP.md
+- Realtime notifications (Socket.io) — Phase 2
+- Advanced dashboard analytics — Phase 2
+- Performance optimization (Redis, pagination) — Phase 3
+- Background job processing (BullMQ) — Phase 3
+- Multi-language support — Phase 4
+- Monitoring (Grafana/Prometheus) — Phase 4

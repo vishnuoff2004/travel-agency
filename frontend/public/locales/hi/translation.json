@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "home": "खोजें",
+    "bookings": "मेरी बुकिंग",
+    "admin": "व्यवस्थापक",
+    "agency": "एजेंसी",
+    "dashboard": "डैशबोर्ड",
+    "analytics": "एनालिटिक्स",
+    "events": "ईवेंट",
+    "notifications": "सूचनाएं",
+    "logout": "लॉग आउट"
+  },
+  "search": {
+    "title": "रूट खोजें",
+    "from": "कहां से",
+    "to": "कहां तक",
+    "search": "खोजें",
+    "searching": "खोज रहे हैं...",
+    "startTyping": "रूट खोजने के लिए टाइप करना शुरू करें।",
+    "results": "परिणाम",
+    "fare": "किराया",
+    "vehicle": "वाहन",
+    "driver": "ड्राइवर",
+    "agency": "एजेंसी",
+    "book": "बुक करें"
+  },
+  "booking": {
+    "title": "मेरी बुकिंग",
+    "new": "नई बुकिंग",
+    "detail": "बुकिंग विवरण",
+    "history": "बुकिंग इतिहास",
+    "status": {
+      "pending": "लंबित",
+      "confirmed": "पुष्टि की गई",
+      "onTrip": "यात्रा पर",
+      "completed": "पूर्ण",
+      "cancelled": "रद्द"
+    },
+    "cancel": "बुकिंग रद्द करें",
+    "cancelConfirm": "क्या आप वाकई इस बुकिंग को रद्द करना चाहते हैं?",
+    "noBookings": "कोई बुकिंग नहीं मिली।",
+    "seatCount": "सीटें",
+    "travelDate": "यात्रा तिथि",
+    "route": "रूट",
+    "totalFare": "कुल किराया"
+  },
+  "auth": {
+    "login": "लॉग इन",
+    "register": "पंजीकरण",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "name": "नाम",
+    "phone": "फ़ोन",
+    "logout": "लॉग आउट",
+    "loginSuccess": "सफलतापूर्वक लॉग इन किया",
+    "registerSuccess": "सफलतापूर्वक पंजीकृत"
+  },
+  "announcement": {
+    "title": "घोषणाएं",
+    "dismiss": "हटाएं",
+    "noAnnouncements": "कोई घोषणा नहीं।"
+  },
+  "events": {
+    "title": "आगामी ईवेंट",
+    "noUpcoming": "कोई आगामी ईवेंट नहीं।",
+    "location": "स्थान",
+    "dateRange": "तिथि सीमा"
+  },
+  "notification": {
+    "title": "सूचनाएं",
+    "markAllRead": "सभी को पढ़ा हुआ चिह्नित करें",
+    "noNotifications": "कोई सूचना नहीं।",
+    "unread": "अपठित"
+  },
+  "language": {
+    "switcher": {
+      "english": "अंग्रेज़ी",
+      "hindi": "हिंदी"
+    }
+  },
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "एक त्रुटि हुई",
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "confirm": "पुष्टि करें",
+    "delete": "हटाएं",
+    "edit": "संपादित करें",
+    "create": "बनाएं",
+    "filter": "फ़िल्टर",
+    "clear": "साफ़ करें",
+    "page": "पृष्ठ",
+    "of": "का",
+    "previous": "पिछला",
+    "next": "अगला"
+  },
+  "analytics": {
+    "title": "बुकिंग एनालिटिक्स",
+    "startDate": "आरंभ तिथि",
+    "endDate": "समाप्ति तिथि",
+    "filter": "फ़िल्टर",
+    "noData": "कोई बुकिंग डेटा उपलब्ध नहीं है।",
+    "date": "तिथि",
+    "bookings": "बुकिंग"
+  }
+}

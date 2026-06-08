@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "home": "Search",
+    "bookings": "My Bookings",
+    "admin": "Admin",
+    "agency": "Agency",
+    "dashboard": "Dashboard",
+    "analytics": "Analytics",
+    "events": "Events",
+    "notifications": "Notifications",
+    "logout": "Logout"
+  },
+  "search": {
+    "title": "Search Routes",
+    "from": "From",
+    "to": "To",
+    "search": "Search",
+    "searching": "Searching...",
+    "startTyping": "Start typing to search routes.",
+    "results": "Results",
+    "fare": "Fare",
+    "vehicle": "Vehicle",
+    "driver": "Driver",
+    "agency": "Agency",
+    "book": "Book"
+  },
+  "booking": {
+    "title": "My Bookings",
+    "new": "New Booking",
+    "detail": "Booking Detail",
+    "history": "Booking History",
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "onTrip": "On Trip",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "cancel": "Cancel Booking",
+    "cancelConfirm": "Are you sure you want to cancel this booking?",
+    "noBookings": "No bookings found.",
+    "seatCount": "Seats",
+    "travelDate": "Travel Date",
+    "route": "Route",
+    "totalFare": "Total Fare"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "phone": "Phone",
+    "logout": "Logout",
+    "loginSuccess": "Logged in successfully",
+    "registerSuccess": "Registered successfully"
+  },
+  "announcement": {
+    "title": "Announcements",
+    "dismiss": "Dismiss",
+    "noAnnouncements": "No announcements."
+  },
+  "events": {
+    "title": "Upcoming Events",
+    "noUpcoming": "No upcoming events.",
+    "location": "Location",
+    "dateRange": "Date Range"
+  },
+  "notification": {
+    "title": "Notifications",
+    "markAllRead": "Mark All as Read",
+    "noNotifications": "No notifications.",
+    "unread": "Unread"
+  },
+  "language": {
+    "switcher": {
+      "english": "English",
+      "hindi": "Hindi"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "filter": "Filter",
+    "clear": "Clear",
+    "page": "Page",
+    "of": "of",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "analytics": {
+    "title": "Bookings Analytics",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "filter": "Filter",
+    "noData": "No booking data available.",
+    "date": "Date",
+    "bookings": "Bookings"
+  }
+}

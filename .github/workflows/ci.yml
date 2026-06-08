@@ -1,0 +1,78 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js 18
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+        cache: 'npm'
+        cache-dependency-path: backend/package-lock.json
+
+    - run: npm ci
+    - run: npm test
+      env:
+        JWT_SECRET: test-secret
+        DB_HOST: localhost
+        DB_USER: root
+        DB_PASS: root
+        DB_NAME: travel_agency_test
+
+  lint-backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 18
+        cache: 'npm'
+        cache-dependency-path: backend/package-lock.json
+
+    - run: npm ci
+    - run: npx eslint src/ || true
+
+  build-frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 18
+        cache: 'npm'
+        cache-dependency-path: frontend/package-lock.json
+
+    - run: npm ci
+    - run: npm run build
+
+  docker-build:
+    runs-on: ubuntu-latest
+    needs: [test-backend, build-frontend]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Build Docker images
+      run: |
+        docker-compose build
